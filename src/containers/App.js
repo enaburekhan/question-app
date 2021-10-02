@@ -1,7 +1,7 @@
-// import {
-//   BrowserRouter as Router, Route, Switch,
-// } from 'react-router-dom';
-// import 'bootstrap/dist/css/bootstrap.min.css';
+import {
+  BrowserRouter as Router, Route, Switch,
+} from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Question from '../components/Question';
 import Signup from './Signup';
@@ -13,9 +13,15 @@ function App() {
     <div className="container">
       <div className="row">
 
-        <Signup />
-        <Login />
-        <Question />
+        <Router>
+          <Switch>
+            <div className="col-9">
+              <Route exact path="/Signup" component={Signup} />
+              <Route exact path="/Login" component={Login} />
+              <Route exact path="/questions" component={Question} />
+            </div>
+          </Switch>
+        </Router>
 
       </div>
 
