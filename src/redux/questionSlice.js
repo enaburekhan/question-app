@@ -4,36 +4,38 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import API from '../api/api';
 
-export const getQuestions = createAsyncThunk(
-  'questions/getQuestions',
+export const getQuestion = createAsyncThunk(
+  'question/getQuestion',
   async (token) => {
     const response = await fetch(`${API}/questions`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
     });
+    console.log('response', response);
     if (!response.ok) throw new Error(response.statusText);
     const data = await response.json();
+    console.log(response);
     return data;
   },
 );
 
-export const questionsSlice = createSlice({
-  name: 'questions',
+export const questionSlice = createSlice({
+  name: 'question',
   initialState: {
     loading: false,
     error: null,
     data: null,
   },
   extraReducers: {
-    [getQuestions.pending]: (state) => {
+    [getQuestion.pending]: (state) => {
       state.loading = true;
     },
-    [getQuestions.rejected]: (state, action) => {
+    [getQuestion.rejected]: (state, action) => {
       state.loading = false;
       state.error = action.error.message;
     },
-    [getQuestions.fulfilled]: (state, action) => {
+    [getQuestion.fulfilled]: (state, action) => {
       state.loading = false;
       state.data = action.payload;
     },
@@ -41,6 +43,6 @@ export const questionsSlice = createSlice({
 
 });
 
-export default questionsSlice.reducer;
+export default questionSlice.reducer;
 
-export const selectQuestions = (state) => state.questions;
+export const selectQuestion = (state) => state.question;
