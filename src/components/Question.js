@@ -35,7 +35,7 @@ const Question = () => {
 
   return (
     <div className="">
-      <h2>Doctors</h2>
+      <h2>Questions</h2>
       {loading && <span className="spinner-border spinner-border-lg" />}
       <h2>{question && question.data}</h2>
     </div>
