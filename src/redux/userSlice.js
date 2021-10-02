@@ -19,13 +19,11 @@ export const userAuth = createAsyncThunk(
         password,
       }),
     });
-    console.log('response', response);
     const data = await response.json();
     if (response.status >= 400 && response.status < 600) {
       throw new Error(data.failure);
     }
     localStorage.setItem('token', data.jwt);
-    console.log('dataJwt', data.jwt);
     return data;
   },
 );

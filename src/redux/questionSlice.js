@@ -12,10 +12,10 @@ export const getQuestion = createAsyncThunk(
         Authorization: `Bearer ${token}`,
       },
     });
-    console.log('response', response);
+
     if (!response.ok) throw new Error(response.statusText);
     const data = await response.json();
-    console.log('data', data);
+
     return data;
   },
 );

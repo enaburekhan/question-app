@@ -2,22 +2,19 @@
 import { useEffect } from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { getQuestion, selectQuestion } from '../redux/questionSlice';
 
 const Question = () => {
   const dispatch = useDispatch();
-  // const token = localStorage.getItem('token');
 
   useEffect(() => {
     dispatch(getQuestion());
   }, [dispatch]);
 
   const question = useSelector(selectQuestion);
-  console.log('question', question);
-  const { loading } = question;
-  console.log('question-data', question.data);
-  console.log('question-data-one', question.data.question_one);
+
+  const { loading, data } = question;
 
   const renderedQuestion = question.data && question.data.map((question) => (
     <div className="card style=width: 18rem " key={question.id}>
@@ -34,6 +31,15 @@ const Question = () => {
       <h2>Questions</h2>
       {loading && <span className="spinner-border spinner-border-lg" />}
       <h2>{renderedQuestion}</h2>
+      <Link
+        to={{
+          pathname: '/answers',
+          questionId: data.id,
+        }}
+        className="btn btn-info"
+      >
+        Add answers
+      </Link>
     </div>
 
   );
