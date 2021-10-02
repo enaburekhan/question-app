@@ -33,7 +33,7 @@ const Question = () => {
       <h2>{renderedQuestion}</h2>
       <Link
         to={{
-          pathname: '/answers',
+          pathname: '/answers/new',
           questionId: data.id,
         }}
         className="btn btn-info"

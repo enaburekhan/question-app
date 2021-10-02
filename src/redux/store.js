@@ -14,9 +14,11 @@ import storage from 'redux-persist/lib/storage';
 import questionReducer from './questionSlice';
 import typeReducer from './typeSlice';
 import userReducer from './userSlice';
+import answersReducer from './answersSlice';
 
 const reducers = combineReducers({
   question: questionReducer,
+  answers: answersReducer,
   type: typeReducer,
   user: userReducer,
 
