@@ -7,7 +7,7 @@ import Question from '../components/Question';
 import Signup from './Signup';
 import Login from './Login';
 import NavBar from '../components/Navbar';
-import NewAnswer from '../components/newAnswer';
+// import NewAnswer from '../components/newAnswer';
 
 function App() {
   return (
@@ -24,7 +24,7 @@ function App() {
               <Route exact path="/Signup" component={Signup} />
               <Route exact path="/Login" component={Login} />
               <Route exact path="/questions" component={Question} />
-              <Route exact path="/answers/new" component={NewAnswer} />
+              {/* <Route exact path="/answers/new" component={NewAnswer} /> */}
             </div>
           </Switch>
         </Router>

@@ -2,8 +2,8 @@
 import { useEffect } from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
 import { getQuestion, selectQuestion } from '../redux/questionSlice';
+import NewAnswer from './newAnswer';
 
 const Question = () => {
   const dispatch = useDispatch();
@@ -31,15 +31,8 @@ const Question = () => {
       <h2>Questions</h2>
       {loading && <span className="spinner-border spinner-border-lg" />}
       <h2>{renderedQuestion}</h2>
-      <Link
-        to={{
-          pathname: '/answers/new',
-          questionId: data.id,
-        }}
-        className="btn btn-info"
-      >
-        Add answers
-      </Link>
+
+      <NewAnswer />
     </div>
 
   );

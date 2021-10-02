@@ -11,12 +11,6 @@ const NewAnswer = () => {
   const [loading, setLoading] = useState(false);
   const { data: userData, error } = useSelector((state) => state.user);
   const dispatch = useDispatch();
-  //   const { data, error } = useSelector((state) => state.question);
-
-  //   const onChangeQuestionId = (e) => {
-  //     const questionId = e.target.value;
-  //     setQuestionId(questionId);
-  //   };
 
   const onChangeAnswerMany = (e) => {
     const answerMany = e.target.value;
@@ -55,17 +49,6 @@ const NewAnswer = () => {
       });
   };
 
-  //   const options = data && (
-  //     data.map((question) => (
-  //       <option
-  //         key={question.id}
-  //         value={question.id}
-  //       >
-  //         {question.answerMany}
-  //       </option>
-  //     ))
-  //   );
-
   if (successful) {
     return <Redirect to="/answers" />;
   }
@@ -78,7 +61,7 @@ const NewAnswer = () => {
           <div>
             <div className="form-group create">
               <label htmlFor="answerMany" className="control-label">
-                AnswerMany
+                Answer
                 <input
                   type="text"
                   className="form-control"
@@ -90,18 +73,7 @@ const NewAnswer = () => {
                 />
               </label>
             </div>
-            {/* <div className="form-group create">
-              <label htmlFor="doctorId">
-                Select from list:
-                <select
-                  value={doctorId}
-                  onChange={onChangeDoctorId}
-                >
 
-                  {loading ? <option>Loading..</option> : options }
-                </select>
-              </label>
-            </div> */}
             <div className="form-group create">
               <button className="btn btn-primary btn-block" disabled={loading} type="submit">
                 {loading && (
