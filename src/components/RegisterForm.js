@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { userAuth } from '../redux/userSlice';
+// import { userAuth } from '../redux/userSlice';
 import Loading from './Loading';
+import { userAuth } from '../redux/userSlice';
 
 const RegisterForm = ({ access, endpoint }) => {
   const history = useHistory();
@@ -71,7 +72,7 @@ const RegisterForm = ({ access, endpoint }) => {
           </button>
         </div>
       </form>
-      { access === 'Signup' ? (
+      {/* { access === 'Signup' ? (
         <p className="text-center">
           Do you already have an account?
           {' '}
@@ -83,7 +84,7 @@ const RegisterForm = ({ access, endpoint }) => {
           {' '}
           <Link to="/Signup">Signup</Link>
         </p>
-      )}
+      )} */}
     </>
   );
 };

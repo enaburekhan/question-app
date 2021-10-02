@@ -12,9 +12,13 @@ import {
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import questionReducer from './questionSlice';
+import typeReducer from './typeSlice';
+import userReducer from './userSlice';
 
 const reducers = combineReducers({
   question: questionReducer,
+  type: typeReducer,
+  user: userReducer,
 
 });
 

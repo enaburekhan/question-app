@@ -1,23 +1,22 @@
-import {
-  BrowserRouter as Router, Route, Switch,
-} from 'react-router-dom';
+// import {
+//   BrowserRouter as Router, Route, Switch,
+// } from 'react-router-dom';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Question from '../components/Question';
+import Signup from './Signup';
+import Login from './Login';
 
 function App() {
   return (
 
     <div className="container">
       <div className="row">
-        <Router>
 
-          <Switch>
-            <div className="col-9">
-              <Route exact path="/questions" component={Question} />
+        <Signup />
+        <Login />
+        <Question />
 
-            </div>
-          </Switch>
-        </Router>
       </div>
 
     </div>

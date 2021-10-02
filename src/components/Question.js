@@ -14,30 +14,26 @@ const Question = () => {
   }, [dispatch]);
 
   const question = useSelector(selectQuestion);
+  console.log('question', question);
   const { loading } = question;
+  console.log('question-data', question.data);
+  console.log('question-data-one', question.data.question_one);
 
-  //   const renderedDoctors = doctors.data && doctors.data.map((doctor) => (
-  //     <div className="card style=width: 18rem " key={doctor.id}>
-  //       <div className="card-body col-3 listDoctors">
-  //         <img src={doctor.image} alt={doctor.name} className="card-img-top doctor-img" />
-  //         <p className="doctor-name">{doctor.name}</p>
-  //         <p className="doctor-specialization">{doctor.specialization}</p>
-  //         <div>
-  //           <p className="doctor-experience">{doctor.experience}</p>
-  //           <p>experience</p>
-  //         </div>
-  //         <Link to={`/doctors/${doctor.id}`} className="btn btn-info ">
-  //           View Doctor
-  //         </Link>
-  //       </div>
-  //     </div>
-  //   ));
+  const renderedQuestion = question.data && question.data.map((question) => (
+    <div className="card style=width: 18rem " key={question.id}>
+      <div className="card-body col-3 listDoctors">
+
+        <p className="doctor-name">{question.question_one}</p>
+
+      </div>
+    </div>
+  ));
 
   return (
     <div className="">
       <h2>Questions</h2>
       {loading && <span className="spinner-border spinner-border-lg" />}
-      <h2>{question && question.data}</h2>
+      <h2>{renderedQuestion}</h2>
     </div>
 
   );

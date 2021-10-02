@@ -15,7 +15,7 @@ export const getQuestion = createAsyncThunk(
     console.log('response', response);
     if (!response.ok) throw new Error(response.statusText);
     const data = await response.json();
-    console.log(response);
+    console.log('data', data);
     return data;
   },
 );
