@@ -1,44 +1,59 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+# question-app
+Question-app allows users to submit their answers to the question: Is a hot dog a sandwich? Why? and get a response. This repo host the react-redux frontend. To access the backend. Go to [question-api](https://github.com/enaburekhan/question-api.git)
 
-## Available Scripts
+### Project features
 
-In the project directory, you can run:
+- A user can signup and login
+- A logged in user can submit answers
+- A logged in user can see the list of answers
 
-### `yarn start`
+ 
+ ### Live Demo:
+[question-app]()
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Screenshot
+![question-app](https://user-images.githubusercontent.com/51296741/135768481-1f5b4f01-c966-4f44-b0b8-4175ce7cd807.png)
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
 
-### `yarn test`
+## Built-With
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `yarn build`
+- React
+- Redux
+- Jest
+- Css3
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Getting Started
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+**To get this project set up on your local machine, follow these simple steps:**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Clone this project: git clone https://github.com/enaburekhan/question-app.git
+2. Cd into the cloned directory
+3. Install the required dependencies by using: `npm install`
+4. run `npm start` to display the application on the browser.
+5. Sign up with a username
+6. Enter password
 
-### `yarn eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**And to run the test on your local machine, follow these simple steps:**
+1. run npm i react-test-renderer
+2. run npm test
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+## Author Details:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+👤 **Eric Enaburekhan**
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Github: [@enaburekhan](https://github.com/enaburekhan)
+- Twitter: [@enaburekhaneric](https://twitter.com/enaburekhaneric)
+- Linkedin: [@ericenaburekhan](https://www.linkedin.com/in/eric-enaburekhan-801a28100/)
+
+## Show your support
+
+Kindly ⭐ Star this project on GitHub — it helps!
+
+## Acknowledgments
+
+- Many thanks to every supporting open source projects. This allowed me to use the available free tools to build the MVP of this project. 
