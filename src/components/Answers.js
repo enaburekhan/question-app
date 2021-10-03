@@ -8,7 +8,6 @@ const Answers = () => {
   const { data: user } = useSelector((state) => state.user);
 
   const answers = useSelector((state) => state.answers);
-  console.log('answers', answers);
 
   const { data, loading } = answers;
   const token = localStorage.getItem('token');
@@ -29,7 +28,7 @@ const Answers = () => {
       <div className="card-body d-flex flex-wrap">
         {(!loading && data.length === 0)
         && (
-        <h4 className="create-appointment">
+        <h4>
           You do not have any answer. Submit one
           <Link to="/answers/new">
             here

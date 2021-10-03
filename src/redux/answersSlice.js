@@ -29,7 +29,6 @@ export const postAnswers = createAsyncThunk(
 
     const data = await response.json();
     if (!response.ok) throw new Error(data.failure);
-    console.log('data', data);
     return data;
   },
 );

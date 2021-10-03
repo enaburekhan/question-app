@@ -10,10 +10,11 @@ const NewAnswer = () => {
   const [questionId, setQuestionId] = useState('');
   const [successful, setSuccessful] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState('');
+  const [invalid, setInvalid] = useState('');
   const { data: userData } = useSelector((state) => state.user);
   const dispatch = useDispatch();
   const { data, error } = useSelector((state) => state.question);
-  console.log('data', data);
 
   useEffect(() => {
     dispatch(getQuestion());
@@ -29,7 +30,6 @@ const NewAnswer = () => {
     setAnswerMany(answerMany);
   };
 
-  // const question_id = questionId;
   const answer_many = answerMany;
 
   if (!userData) {
@@ -38,9 +38,26 @@ const NewAnswer = () => {
 
   const { user_id } = userData;
 
+  const show = setTimeout(() => {
+    if (successful) {
+      setMessage('');
+    }
+    return null;
+  }, 1000);
+
+  const nonValidAnswers = ['yes', "I don't know", 'no', "that's fine"];
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setSuccessful(false);
+
+    if (nonValidAnswers.includes(answerMany)) {
+      setInvalid('invalid answers');
+      setTimeout(() => {
+        setInvalid('');
+      }, 1000);
+      return;
+    }
 
     // eslint-disable-next-line no-underscore-dangle
 
@@ -49,10 +66,8 @@ const NewAnswer = () => {
     }))
       .then(() => {
         setSuccessful(true);
-        alert.show('Answer created', {
-          type: 'success',
-          timeout: 2000,
-        });
+        setMessage('Answer created');
+        show();
         setLoading(false);
       })
       .catch((error) => {
@@ -60,9 +75,6 @@ const NewAnswer = () => {
         setSuccessful(false);
       });
   };
-  console.log('answer_many', answer_many);
-  // console.log('questionId', questionId);
-  console.log('user_id', user_id);
 
   const options = data && (
     data.map((question) => (
@@ -75,16 +87,12 @@ const NewAnswer = () => {
     ))
   );
 
-  if (successful) {
-    return <Redirect to="/answers" />;
-  }
-
   return (
     <div className="col-md-12">
       <div className="card card-container">
         <form onSubmit={handleSubmit}>
           <div className="form-group create">
-            <label htmlFor="doctorId">
+            <label htmlFor="questionId">
               Question:
               <select
                 value={questionId}
@@ -95,9 +103,11 @@ const NewAnswer = () => {
               </select>
             </label>
           </div>
-          { !successful && (
           <div>
+
             <div className="form-group create">
+              <p>{message}</p>
+              <p>{invalid}</p>
               <label htmlFor="answerMany" className="control-label">
                 Answer
                 <input
@@ -121,7 +131,6 @@ const NewAnswer = () => {
               </button>
             </div>
           </div>
-          )}
           {error && (
           <div className="form-group">
             <div className={successful ? 'alert alert-success' : 'alert alert-danger'} role="alert">

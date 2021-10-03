@@ -17,7 +17,7 @@ const NavBar = () => {
           {token ? (
             <div>
               <Link to="/answers/new" className="one nav-link active">Question</Link>
-              {/* <Link to="/appointments" className="appoint-md nav-link">Appointments</Link> */}
+              <Link to="/answers" className="appoint-md nav-link">AnswersList</Link>
               <Logout />
             </div>
           ) : (
