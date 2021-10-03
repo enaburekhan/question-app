@@ -15,7 +15,7 @@ const RegisterForm = ({ access, endpoint }) => {
 
   useEffect(() => {
     if (token) {
-      history.push('/questions');
+      history.push('/answers/new');
     }
   }, [token]);
 

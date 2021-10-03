@@ -8,8 +8,9 @@ export const postAnswers = createAsyncThunk(
   'answers/postAnswers',
   async (
     {
-      answer_many, question_id, user_id,
+      user_id, answer_many,
     },
+
   ) => {
     const token = localStorage.getItem('token');
     const response = await fetch(`${API}/answers`, {
@@ -21,15 +22,14 @@ export const postAnswers = createAsyncThunk(
       },
 
       body: JSON.stringify({
-        answer_many,
-        question_id,
         user_id,
+        answer_many,
       }),
     });
 
     const data = await response.json();
     if (!response.ok) throw new Error(data.failure);
-
+    console.log('data', data);
     return data;
   },
 );
