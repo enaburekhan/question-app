@@ -56,4 +56,4 @@ Kindly ⭐ Star this project on GitHub — it helps!
 
 ## Acknowledgments
 
-- Many thanks to every supporting open source projects. This allowed me to use the available free tools to build the MVP of this project. 
+- Many thanks to every one supporting open source projects. This allowed me to use the available free tools to build the MVP of this project. 
