@@ -10,6 +10,7 @@ Question-app allows users to submit their answers to the question: Is a hot dog 
  
  ### Live Demo:
 [question-app](https://pickfu-question-one.netlify.app/)
+Kindly ensure the backend is running locally for the above link to work. I'm yet to successfully deploy the backend to a cloud provider.
 
 ## Screenshot
 ![question-app](https://user-images.githubusercontent.com/51296741/135768481-1f5b4f01-c966-4f44-b0b8-4175ce7cd807.png)
