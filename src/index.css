@@ -14,7 +14,6 @@ body {
   height: 750px;
 }
 
-
 /* create signUp form */
 .create {
   max-width: 400px;
@@ -52,7 +51,6 @@ body {
   border-radius: 8px;
   cursor: pointer;
 }
-
 
 /* navbar */
 .nav {
